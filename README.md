@@ -27,3 +27,5 @@ python manage.py createsuperuser user>admin
 pip install + nome do pacote
 - fazer os testes
 python manage.py test
+
+  'https://imgs.search.brave.com/ywF5eEez43ZN6giLPwp0Q9lfooZcbrUV5G51bwplYJQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9weXRo/b25hY2FkZW15LmNv/bS5ici9hc3NldHMv/cG9zdHMvZGphbmdv/LWludHJvZHVjdGlv/bi9kamFuZ28tYXJj/aGl0ZWN0dXJlLnBu/Zw'
