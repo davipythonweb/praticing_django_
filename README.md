@@ -18,3 +18,5 @@ python manage.py makemigrations
 python manage.py createsuperuser user>admin
 - instalar pacote
 pip install + nome do pacote
+- fazer os testes
+python manage.py test
