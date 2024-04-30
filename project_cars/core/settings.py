@@ -13,7 +13,8 @@ SECRET_KEY = 'django-insecure-&wvu)&tt)!d-_jsg!o1#=zs$8f6-%7%i=)p)#t*vao827z8*=y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://8000-davipythonw-praticingdj-buyim74jytc.ws-us110.gitpod.io/', 'localhost',]
+ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -25,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'carros',
 ]
 
 MIDDLEWARE = [
@@ -35,6 +37,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -64,7 +67,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'storage.sqlite3',
     }
 }
 
