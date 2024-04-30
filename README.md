@@ -1,6 +1,8 @@
 # praticing_django_
 Estuding django
 
+- Django_Master
+
 ˋcomandos djangoˋ
 - criado projeto
 python django-admin startproject core .
