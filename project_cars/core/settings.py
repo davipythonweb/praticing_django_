@@ -13,7 +13,9 @@ SECRET_KEY = 'django-insecure-&wvu)&tt)!d-_jsg!o1#=zs$8f6-%7%i=)p)#t*vao827z8*=y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+# RESOLUÇÃO PARA O ERRO QUE NÃO MOSTAR A ROTA NO NAVEGADOR(ERRO DE HOST) ADCIONAR APENAS A URL AQUI!
+ALLOWED_HOSTS = ["8000-davipythonw-praticingdj-buyim74jytc.ws-us110.gitpod.io"]
 
 
 
