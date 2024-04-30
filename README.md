@@ -16,6 +16,13 @@ python manage.py migrate
 python manage.py makemigrations
 - criando super usuario admin
 python manage.py createsuperuser user>admin
+
+
+* ACESSO-SGBD
+- USER DE TESTE EM NUVEM => admin
+- EMAIL PARA TESTE EM NUVEM =>admin@gmail.com
+-PASS DE TESTE EM NUVEM => Admin$50001
+
 - instalar pacote
 pip install + nome do pacote
 - fazer os testes

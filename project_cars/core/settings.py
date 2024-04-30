@@ -18,6 +18,10 @@ DEBUG = True
 ALLOWED_HOSTS = ["8000-davipythonw-praticingdj-buyim74jytc.ws-us110.gitpod.io"]
 
 
+# PARA CORRIGIR O ERRO DE ACESSO PROIBIDO NO LOGIN CODIGO 403 EM NUVEM POR CAUSA DO CSRF_TOKEN
+CSRF_TRUSTED_ORIGINS = ['https://8000-davipythonw-praticingdj-buyim74jytc.ws-us110.gitpod.io']
+
+
 
 # Application definition
 
@@ -69,7 +73,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'storage.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
