@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import carros
+from .views import cars
 
 urlpatterns = [
-  path('', carros),
+  path('', cars),
 ]
