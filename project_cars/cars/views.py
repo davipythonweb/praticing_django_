@@ -4,4 +4,4 @@ from django.views.decorators.csrf import csrf_protect
 
 @csrf_protect
 def cars(request):
-  return HttpResponse('Ola Django')
+  return HttpResponse('<h1>Ola Django</h1>')
