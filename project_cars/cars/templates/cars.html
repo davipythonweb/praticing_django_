@@ -1,0 +1,25 @@
+{% extends 'bases/base.html' %}
+{% load static %}
+
+{% block 'body' %}
+
+  
+  <h3>My Cars</h3>
+  {% if cars %}
+  {% for car in cars %}
+  <div class="card" style="width: 16rem; display: inline-flex;">
+    <img src="{{car.photo.url }}" class="card-img-top" alt="{{ car.model }} - {{ car.brand }}">
+    <div class="card-body">
+      <i class="bi bi-car-front"></i> 
+      <h2>{{car.brand}}</h2><h2>{{car.model}}</h2>
+      <p>{{car.factory_year}} - R$ {{ car.value }}</p>
+      <a href="#"><p class="card-text">Fale Conosco Já!</p></a>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+  <p class="no-results">Nenhum carro encontrado.</p>
+  {% endif %}
+
+
+{% endblock %}

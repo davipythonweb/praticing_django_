@@ -12,8 +12,6 @@
 
   <!-- CSS of project  -->
   <link href="{% static 'geral/css/style.css' %}" rel="stylesheet">
-  
-
 
 </head>
 
@@ -25,26 +23,8 @@
     <button type="submit">Buscar</button>
   </form>
 
-  {% block content %}
-    <h3>My Cars</h3>
-  {% if cars %}
-    {% for car in cars %}
-    <div class="card" style="width: 16rem; display: inline-flex;">
-      <img src="{{car.photo.url }}" class="card-img-top" alt="{{ car.model }} - {{ car.brand }}">
-      <div class="card-body">
-        <i class="bi bi-car-front"></i> 
-        <h2>{{car.brand}}</h2><h2>{{car.model}}</h2>
-        <p>{{car.factory_year}} - R$ {{ car.value }}</p>
-        <a href="#"><p class="card-text">Fale Conosco Já!</p></a>
-      </div>
-    </div>
-    {% endfor %}
-  {% else %}
-    <p class="no-results">Nenhum carro encontrado.</p>
-  {% endif %}
+  {% block 'body' %}{% endblock %}
 
-  {% endblock %}
-  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
