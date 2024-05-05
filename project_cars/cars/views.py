@@ -22,4 +22,4 @@ def cars(request):
 
 
   # retornando a renderizaçao da pagina com o template e as informaçoes armazenadas na viavel (cars)
-  return render(request,'cars.html', {'cars': cars})
+  return render(request,'base.html', {'cars': cars})
