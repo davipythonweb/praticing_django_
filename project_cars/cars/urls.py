@@ -5,6 +5,6 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-  path('', cars),
+  path('', cars, name='cars_list'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) # para configurar uso de armazenar
 

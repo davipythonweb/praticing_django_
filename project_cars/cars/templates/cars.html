@@ -16,22 +16,29 @@
 
 <body>
   <h1>Magazine | Auto-Cars</h1>
+
+  <form action="{% url 'cars_list' %}" method="GET">
+    <input type="text" name="search" placeholder="Buscar carro...">
+    <button type="submit">Buscar</button>
+  </form>
+
   {% block content %}
     <h3>My Cars</h3>
-
+  {% if cars %}
     {% for car in cars %}
     <div class="card" style="width: 16rem; display: inline-flex;">
-      <img src="{{car.photo}}" class="card-img-top" alt="...">
+      <img src="{{car.photo.url }}" class="card-img-top" alt="{{ car.model }} - {{ car.brand }}">
       <div class="card-body">
         <i class="bi bi-car-front"></i> 
-        <li>{{car.brand}}</li>
-        <li>{{car.model}}</li>
-        <li>{{car.factory_year}}</li>
-        <li>{{car.value}}</li>
+        <h2>{{car.brand}}</h2><h2>{{car.model}}</h2>
+        <p>{{car.factory_year}} - R$ {{ car.value }}</p>
         <a href="#"><p class="card-text">Fale Conosco Já!</p></a>
       </div>
     </div>
     {% endfor %}
+  {% else %}
+    <p class="no-results">Nenhum carro encontrado.</p>
+  {% endif %}
 
   {% endblock %}
   
