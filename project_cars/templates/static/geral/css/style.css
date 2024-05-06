@@ -2,9 +2,22 @@ body
 {
   background-color: gray;
   color: beige;
+ 
 }
 
+img
+{
+  width: 260px;
+  height: 200px; 
+}
+.content
+{
+  margin: 0 5%;
+}
 .card
 {
-  background-color: orange;
+  width: 17.5rem; 
+  height: 29rem;
+  display: inline-flex;
+  margin: 5px 2px;
 }

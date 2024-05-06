@@ -52,8 +52,8 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # para carregar os templates
+        'APP_DIRS':True, # para carregar as pastas dos templates
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
