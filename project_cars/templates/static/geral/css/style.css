@@ -2,7 +2,9 @@ body
 {
   background-color: gray;
   color: beige;
- 
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 img
@@ -20,4 +22,13 @@ img
   height: 29rem;
   display: inline-flex;
   margin: 5px 2px;
+  
+}
+footer
+{
+  background-color: #ccc;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
 }

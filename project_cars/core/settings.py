@@ -53,6 +53,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')], # para carregar os templates
+        # 'DIRS': ['app/templates'], # tambem pode usar assim simplicado
         'APP_DIRS':True, # para carregar as pastas dos templates
         'OPTIONS': {
             'context_processors': [
