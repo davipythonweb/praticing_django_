@@ -16,6 +16,23 @@
 
 {% block 'content' %}
 
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #333;justify-content: space-between;">
+    <h1>Magazine | Auto-Cars</h1>
+
+    <form class="row " action="{% url 'cars_list' %}" method="GET">
+      <div class="col-4 ">
+        <input class="form-control" type="text" name="search" placeholder="Search car...">
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+      <div class="col ">
+        <a  class="btn btn-secondary" href="{% url 'new_car' %}">Register Cars</a>
+      </div>
+    </form>
+
+  </nav>
+
   <div class="content">
 
   <h3>All Cars</h3>
