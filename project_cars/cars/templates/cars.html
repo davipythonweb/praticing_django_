@@ -1,15 +1,16 @@
 {% extends 'bases/base.html' %}
 {% load static %}
 
-{% block 'title' %}{% endblock %}
+{% block 'title' %}
+  Magazine-Cars
+{% endblock %}
 
 {% block 'head' %}{% endblock %}
 
 {% block 'content' %}
-<div class="content">
+  <div class="content">
 
 
-  
   <h3>My Cars</h3>
   {% if cars %}
   {% for car in cars %}
@@ -27,5 +28,5 @@
   <p class="no-results">Nenhum carro encontrado.</p>
   {% endif %}
 
-</div>
+  </div>
 {% endblock %}
