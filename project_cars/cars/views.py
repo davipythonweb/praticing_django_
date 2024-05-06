@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from cars.models import Car
+from cars.forms import CarForm
 
 
 def cars(request):
@@ -23,3 +24,8 @@ def cars(request):
 
   # retornando a renderizaçao da pagina com o template e as informaçoes armazenadas na viavel (cars)
   return render(request,'cars.html', {'cars': cars})
+
+
+def new_car_view(request):
+  new_car_form = CarForm() # cria um formulario vazio
+  return render(request, 'new_car.html', { 'new_car_form': new_car_form }) # passando o formulario para o template
