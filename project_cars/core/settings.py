@@ -16,13 +16,15 @@ DEBUG = True
 
 
 # RESOLUÇÃO PARA O ERRO QUE NÃO MOSTAR A ROTA NO NAVEGADOR(ERRO DE HOST) ADCIONAR APENAS A URL AQUI!
-ALLOWED_HOSTS = ["laughing-space-garbanzo-wrrgp9rq7jww2qxx-8000.app.github.dev"]
+ALLOWED_HOSTS = ['localhost']
 
 
 # PARA CORRIGIR O ERRO DE ACESSO PROIBIDO NO LOGIN CODIGO 403 EM NUVEM POR CAUSA DO CSRF_TOKEN
-CSRF_TRUSTED_ORIGINS = ['https://laughing-space-garbanzo-wrrgp9rq7jww2qxx-8000.app.github.dev']
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8000']
 
-
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8000',
+]
 
 # Application definition
 
