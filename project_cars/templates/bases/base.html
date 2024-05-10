@@ -20,8 +20,40 @@
 
 <body>
   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #333;justify-content: space-between;">
+        <h3>Magazine | Auto-Cars</h3>
+
+        {% if user.is_authenticated %}
+          <ol style="font-size: 1.5rem;color: whitesmoke;padding-right: 20px  ;font-family:Verdana, Geneva, Tahoma, sans-serif;">Olá! <i class="bi bi-person"></i>: <i>{{ user.username }}</i></ol>
+        
+          <div class="col ">
+            <a  class="btn btn-outline-primary" href="{% url 'new_car' %}">Register Cars</a>
+          </div>
+        {% endif %}
+
+        {% if not user.is_authenticated %}
+          <div class="col ">
+            <a  class="btn btn-outline-primary" href="{% url 'register' %}">Register Users</a>
+          </div>
+          <div class="col ">
+            <a  class="btn btn-outline-primary" href="{% url 'login' %}">Login Users</a>
+          </div>
+        {% endif %}
+
+        <div class="col ">
+          <a  class="btn btn-outline-primary" href="{% url 'cars_list' %}">cars</a>
+        </div>
+
+        {% if user.is_authenticated %}
+          <div class="col ">
+            <a  class="btn btn-outline-warning" href="{% url 'logout' %}">logout</a>
+          </div>
+        {% endif %}
+  
+    </nav>
   </header>
 
+  
   <main>
     {% block 'content' %}{% endblock %}
   </main>

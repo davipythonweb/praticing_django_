@@ -59,9 +59,16 @@ footer
 
 /* register.html do accounts */
 
-.form-group
+/* formulario de pesquisa cars.html */
+#form-search
 {
-  display: inline-flex;
-  background-color: red;
-  color: blue;
+  margin-left: 400px;
+}
+#form-search .col 
+{
+  margin: 20px auto;
+}
+#form-search .form-control
+{
+  margin: 20px auto;
 }

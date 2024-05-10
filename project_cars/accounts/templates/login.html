@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'title' %}
-  Register-Users
+  Login-Users
 {% endblock %}
 
 {% block 'head' %}
@@ -20,29 +20,12 @@
     <form action="" method="post">
         {% csrf_token %}
 
-        <div class="form-group">
-            {{ user_form.username.errors}}
-            <label for="">Username</label>
-            {{ user_form.username }}
-        </div>
+        <table>
+            {{ login_form.as_table }}
+        </table>
 
-        <div class="form-group">
-            {{ user_form.password1.errors}}
-            <label for="">Password</label>
-            {{ user_form.password1 }}
-        </div>
+        <input type="submit" value="Entrar" class="btn btn-success">
 
-        <div class="form-group">
-            {{ user_form.password2.errors}}
-            <label for="">Password Confirmation</label>
-            {{ user_form.password2 }}
-        </div>
-
-        <div class="form-group">
-            <input class="btn btn-primary" type="submit" value="Cadastrar">
-        </div>
-
-        
     </form>
 
 {% endblock %}

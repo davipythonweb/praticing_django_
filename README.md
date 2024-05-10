@@ -24,8 +24,10 @@ Estuding django
 - USER DE TESTE EM NUVEM => admin
 - EMAIL PARA TESTE EM NUVEM =>admin@gmail.com
 - PASS DE TESTE EM NUVEM => Admin$50001
-- NOVO USUARIO PARA TESTAR: user_teste
+- NOVO USUARIO PARA TESTAR: teste_user
 - PASS : Teste@123
+- NOVO USUARIO PARA TESTAR: user_teste2
+- PASS : Teste2*300
 
 
 - instalar pacote
