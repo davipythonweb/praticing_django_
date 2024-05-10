@@ -55,3 +55,13 @@ footer
 .zoom:hover {
   transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+
+/* register.html do accounts */
+
+.form-group
+{
+  display: inline-flex;
+  background-color: red;
+  color: blue;
+}
