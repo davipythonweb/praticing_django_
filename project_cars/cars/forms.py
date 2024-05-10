@@ -9,8 +9,28 @@ class CarModelForm(forms.ModelForm):
     model = Car
     fields = '__all__'
 
-# todo este código para trabalhar com (Form)
 
+  def clean_value(self): # validaçao de formulario (valor do carro)
+    value = self.cleaned_data.get('value')
+    if value < 20000:
+      self.add_error('value', 'Valor mínimo de carro deve ser de R$20.000.')
+    return value
+
+  def clean_factory_year(self): # validaçao do ano de fabricação
+    factory_year = self.cleaned_data.get('factory_year')
+    if factory_year < 1975:
+      self.add_error('factory_year', 'Não é possivel cadastrar carros fabricados antes de 1975.')
+    return factory_year
+
+
+
+
+#regra: não eh possivel cadastrar carro com valor abaixo de $20.000 reais. 
+# carros com ano menor que 1975 não pode ser cadastrados
+
+"""
+todo este código para trabalhar com (Form)
+"""
 # class CarForm(forms.Form):
 #   model = forms.CharField(max_length=200)
 #   brand = forms.ModelChoiceField(Brand.objects.all()) # mostrar para o usuario uma lista de opçoes da query feita na tabela
