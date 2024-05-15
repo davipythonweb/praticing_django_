@@ -21,7 +21,7 @@
   <form   method="post" enctype="multipart/form-data" name="reset">
     {% csrf_token  %}
     <table class="table table-striped table-hover">
-      {{ new_car_form.as_table }} <!-- .as_p => adiciona paragrafos, .as_table => renderiza tabela--> 
+      {{ form.as_table }} <!-- .as_p => adiciona paragrafos, .as_table => renderiza tabela--> 
     </table>
     <input type="submit" value="Cadastrar" class="btn btn-primary">
   </form>
