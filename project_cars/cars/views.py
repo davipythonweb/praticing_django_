@@ -7,14 +7,15 @@ from django.views import View
 
 
 
-def cars(request):
-  cars = Car.objects.all().order_by('model') # pegando todos os dados e usando afunçao (oder_by) para ordenar pelo modelo.(-model)faz ordenaçao contraria de Z a A.
+# usando Function Based views
+# def cars(request):
+  # cars = Car.objects.all().order_by('model') # pegando todos os dados e usando afunçao (oder_by) para ordenar pelo modelo.(-model)faz ordenaçao contraria de Z a A.
 
   # Fazendo o usuario conseguir filtrar pela requisiçao(capturando o request e aplicando o filtro)
-  search = request.GET.get('search') #o usuario esta mando um parametro =(search) que esta querendo filtrar 
+  # search = request.GET.get('search') #o usuario esta mando um parametro =(search) que esta querendo filtrar 
   
-  if search: # verificar se o usuario passar marametros , aplique o filtro na request recebida(__icontains =caixa alta ou caixa baixa)
-    cars = Car.objects.filter(model__icontains=search).order_by('model') # filtro no campo modelo do banco e pegando qualquer campo com __contains + o parametro search
+  # if search: # verificar se o usuario passar marametros , aplique o filtro na request recebida(__icontains =caixa alta ou caixa baixa)
+    # cars = Car.objects.filter(model__icontains=search).order_by('model') # filtro no campo modelo do banco e pegando qualquer campo com __contains + o parametro search
   
   
   # print(request.GET) # visualizando a lista(completa) de querys que o usuario passou
@@ -26,11 +27,11 @@ def cars(request):
 
 
   # retornando a renderizaçao da pagina com o template e as informaçoes armazenadas na viavel (cars)
-  return render(request,'cars.html', {'cars': cars})
+  # return render(request,'cars.html', {'cars': cars})
 
 
 
-# Usano Class Bases Views no Lugar de Function Based Views
+# Usano Class Bases Views no Lugar de Function Based Views(Boa Prática)
 class CarsView(View):
   
   def get(self, request):
