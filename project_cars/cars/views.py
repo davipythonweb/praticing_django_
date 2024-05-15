@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from cars.models import Car
@@ -5,9 +7,12 @@ from cars.models import Car
 from cars.forms import CarModelForm
 from django.views import View
 
+from django.views.generic import ListView, CreateView
 
 
-# usando Function Based views
+
+# usando Function Based views(CODIGO AMADOR)
+
 # def cars(request):
   # cars = Car.objects.all().order_by('model') # pegando todos os dados e usando afunçao (oder_by) para ordenar pelo modelo.(-model)faz ordenaçao contraria de Z a A.
 
@@ -31,7 +36,7 @@ from django.views import View
 
 
 
-# Usano Class Bases Views no Lugar de Function Based Views(Boa Prática)
+# Usando(View Base) Class Bases Views no Lugar de Function Based Views(Boa Prática)
 class CarsView(View):
   
   def get(self, request):
@@ -43,6 +48,24 @@ class CarsView(View):
     return render(request,'cars.html', {'cars': cars})
 
 
+# Usando Class Bases Views (Views genericas )  no lugar de (Views Base)
+class CarsListView(ListView):
+  model = Car
+  template_name = 'cars.html'
+  context_object_name = 'cars'
+
+  def get_queryset(self):
+    cars = super().get_queryset().order_by('model')
+    search = self.request.GET.get('search') 
+    
+    if search: 
+      cars = cars.filter(model__icontains=search) 
+    return cars
+
+
+
+
+# usando Function Based views(CODIGO AMADOR)
 
 # com apenas Form
 # def new_car_view(request):
@@ -56,16 +79,29 @@ class CarsView(View):
 #   return render(request, 'new_car.html', { 'new_car_form': new_car_form }) # passando o formulario para o template
 
 
-
-
 # Com ModelForm
-def new_car_view(request):
-  if request.method == 'POST':
-    new_car_form= CarModelForm(request.POST, request.FILES)
-    if new_car_form.is_valid(): # se os dados forem validos, chame a funcao save
-      new_car_form.save() # salva no database
-      return redirect('cars_list') # redireciona o usuario para a pagina principal da lista dos carros
-  else:
-    new_car_form = CarModelForm() # cria um formulario vazio
-  return render(request, 'new_car.html', { 'new_car_form': new_car_form }) # passando o formulario para o template
+# def new_car_view(request):
+#   if request.method == 'POST':
+#     new_car_form= CarModelForm(request.POST, request.FILES)
+#     if new_car_form.is_valid(): # se os dados forem validos, chame a funcao save
+#       new_car_form.save() # salva no database
+#       return redirect('cars_list') # redireciona o usuario para a pagina principal da lista dos carros
+#   else:
+#     new_car_form = CarModelForm() # cria um formulario vazio
+#   return render(request, 'new_car.html', { 'new_car_form': new_car_form }) # passando o formulario para o template
 
+
+
+# Usano (View Base) Class Based Views no Lugar de Function Based Views(Boa Prática)
+class NewCarView(View):
+  
+  def get(self, request):
+    new_car_form = CarModelForm() 
+    return render(request, 'new_car.html', { 'new_car_form': new_car_form })
+  
+  def post(self, request):
+    new_car_form= CarModelForm(request.POST, request.FILES)
+    if new_car_form.is_valid():
+        new_car_form.save() 
+        return redirect('cars_list') 
+    return render(request, 'new_car.html', { 'new_car_form': new_car_form })
