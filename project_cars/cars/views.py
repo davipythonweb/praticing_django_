@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from cars.models import Car
 # from cars.forms import CarForm
 from cars.forms import CarModelForm
+from django.views import View
 
 
 
@@ -26,6 +27,20 @@ def cars(request):
 
   # retornando a renderizaçao da pagina com o template e as informaçoes armazenadas na viavel (cars)
   return render(request,'cars.html', {'cars': cars})
+
+
+
+# Usano Class Bases Views no Lugar de Function Based Views
+class CarsView(View):
+  
+  def get(self, request):
+    cars = Car.objects.all().order_by('model') 
+    search = request.GET.get('search') 
+    
+    if search: 
+      cars = cars.filter(model__icontains=search) 
+    return render(request,'cars.html', {'cars': cars})
+
 
 
 # com apenas Form
