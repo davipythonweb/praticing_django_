@@ -1,10 +1,14 @@
 body
 {
-  background-color: gray;
+  /* background-color: gray; */
   color: beige;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+h2,h3
+{
+  color: #333;
 }
 
 .card-img-top
@@ -71,4 +75,22 @@ footer
 #form-search .form-control
 {
   margin: 20px auto;
+}
+
+/* datail-car */
+.car-card
+{
+ text-align: center;
+ margin-top: 20px;
+ color: #333;
+ padding-top: 20px;
+}
+.car-card >img
+{
+  width: 600px;
+  height: 400px;
+  /* box-shadow: 10px 5px 5px black; */
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+
 }
