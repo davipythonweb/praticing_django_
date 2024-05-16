@@ -24,7 +24,7 @@
     <p><strong>Placa:</strong> {{object.plate}}</p>
     <p> <strong>Preço:</strong> R$ {{ object.value }}</p>
     <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Edit Car</a>
-    <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-danger">Delete Car</a>
+    <a href="{% url 'car_delete' pk=object.pk %}" class="btn btn-danger">Delete Car</a>
   </div> 
 
 {% endblock %}

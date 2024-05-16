@@ -16,17 +16,17 @@
 
 {% block 'content' %}
 
-  <div class="card" >
+  <div class="card-delete" style="margin: 50px 25%;" >
     <div class="card-header">
         <h2>Delete Car</h2>
     </div>
     <div class="card-body">
-        <p>Tem Certeza que deseja deletar o carro <strong>{{object.brand}} {{object.model}} ?</strong></p>
+        <p>Tem Certeza que deseja deletar o carro <strong>{{object.brand}} {{object.model}} </strong>?</p>
         <form action="" method="post">
             {% csrf_token %}
             <div class="buttons-container">
                 <button class="btn btn-danger" type="submit">Delete Car</button>
-                <a href="{% url 'car_update' %}" class="btn btn-primary">Cancel</a>
+                <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Cancel</a>
             </div>
         </form>
     </div>
