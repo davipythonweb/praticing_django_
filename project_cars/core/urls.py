@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 from accounts.views import register_view, login_view, logout_view
 # from cars.views import CarsView, NewCarView
 
-from cars.views import CarsListView, NewCarCreateView, CarDatailView
+from cars.views import CarsListView, NewCarCreateView, CarDatailView, CarUpdateView
 
 
 
@@ -16,6 +16,7 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('', CarsListView.as_view(), name='cars_list'),
-    path('new_car/',NewCarCreateView.as_view(), name='new_car'),
-    path('car/<int:pk>',CarDatailView.as_view(), name='car_detail'),
+    path('new_car/', NewCarCreateView.as_view(), name='new_car'),
+    path('car/<int:pk>', CarDatailView.as_view(), name='car_detail'),
+    path('car/<int:pk>/update', CarUpdateView.as_view(), name='car_update'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT) # para configurar uso de armazenar

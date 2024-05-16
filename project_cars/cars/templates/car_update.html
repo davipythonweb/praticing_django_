@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block 'title' %}
-  Cadastre-Cars
+  Update-Car
 {% endblock %}
 
 {% block 'head' %}
@@ -17,13 +17,20 @@
 
 {% block 'content' %}
   
-
   <form  style="margin: 10px;;" method="post" enctype="multipart/form-data" name="reset">
     {% csrf_token  %}
+    <h2>Edit Car</h2>
     <table class="table table-striped table-hover">
       {{ form.as_table }} <!-- .as_p => adiciona paragrafos, .as_table => renderiza tabela--> 
     </table>
-    <input type="submit" value="Cadastrar" class="btn btn-primary">
+    <div class="buttons-container">
+        <input type="submit" value="Save Changes" class="btn btn-primary">
+        <a href="{% url 'car_update' pk=object.pk %}" class="btn btn-primary">Edit Car</a>
+        <a href="{% url 'cars_list' %}" class="btn btn-danger">Cancel</a>
+    </div> 
   </form>
+  
 {% endblock %}
-<!--  -->
+ 
+ 
+ 
