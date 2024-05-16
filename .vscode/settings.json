@@ -1,7 +1,0 @@
-{
-    "python.testing.pytestArgs": [
-        "project_cars"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
-}
