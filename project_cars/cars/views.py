@@ -6,6 +6,8 @@ from cars.forms import CarModelForm
 # from django.views import View
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 
 # usando Function Based views(CODIGO AMADOR)
@@ -102,9 +104,16 @@ class CarsListView(ListView):
 #         return redirect('cars_list') 
 #     return render(request, 'new_car.html', { 'new_car_form': new_car_form })
   
+
   
+class CarDatailView(DetailView):
+  model = Car
+  template_name = 'car_detail.html'
+  
+
   
 # Usando Class Bases Views (Views genericas )  no lugar de (Views Base)=>(Boas Práticas)
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class NewCarCreateView(CreateView):
   model = Car
   form_class = CarModelForm
@@ -112,11 +121,8 @@ class NewCarCreateView(CreateView):
   success_url = '/'
   
   
-class CarDatailView(DetailView):
-  model = Car
-  template_name = 'car_detail.html'
   
-  
+@method_decorator(login_required(login_url='login'), name='dispatch') # decorator para forçar o login para acessar a rota.  
 class CarUpdateView(UpdateView):
   model = Car
   form_class = CarModelForm
@@ -126,6 +132,7 @@ class CarUpdateView(UpdateView):
     return reverse_lazy('car_detail', kwargs={'pk': self.object.pk})
   
   
+@method_decorator(login_required(login_url='login'), name='dispatch')  
 class CarDeleteView(DeleteView):
   model = Car
   template_name = 'car_delete.html'
