@@ -21,6 +21,7 @@ Estuding django
 
 * ACESSO-SGBD
 
+
 - USER DE TESTE EM NUVEM => admin
 - EMAIL PARA TESTE EM NUVEM =>admin@gmail.com
 - PASS DE TESTE EM NUVEM => Admin$50001
