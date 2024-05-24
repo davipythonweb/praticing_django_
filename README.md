@@ -15,7 +15,7 @@ Estuding django
 `drive para django e postgres`
 - pip install psycopg2
 `para usar variaveis de ambient`
-- pip install pydotenv
+- pip install python-dotenv
 
 
 - Django_Master
