@@ -2,6 +2,22 @@
 
 Estuding django
 
+- migrando para banco PostgreSQL
+`comandos`
+`acessar shell postgres (windows)`
+- psql -U postgres
+`lista todos os bancos`
+- \l
+`criar banco`
+- CREATE DATABASE (nome do banco);
+`sair`
+- \q
+`drive para django e postgres`
+- pip install psycopg2
+`para usar variaveis de ambient`
+- pip install pydotenv
+
+
 - Django_Master
 
 ˋcomandos djangoˋ
@@ -29,7 +45,6 @@ Estuding django
 - PASS : Teste@123
 - NOVO USUARIO PARA TESTAR: user_teste2
 - PASS : Teste2*300
-
 
 - instalar pacote
   pip install + nome do pacote
