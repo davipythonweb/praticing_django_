@@ -14,7 +14,7 @@ def car_invetory_update():
 @receiver(pre_save, sender=Car)
 def car_pre_save(sender, instance, **kwargs):
    if not instance.bio:
-       instance.bio = 'Bio gerada automaticamente!'
+       instance.bio = 'Para mais informações: faleconosco@contato.com'
         
 @receiver(post_save, sender=Car)
 def car_post_save(sender, instance, **kwargs):
