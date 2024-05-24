@@ -17,8 +17,7 @@ Estuding django
 `para usar variaveis de ambient`
 - pip install python-dotenv
 
-
-- Django_Master
+## Django_Master
 
 ˋcomandos djangoˋ
 
@@ -35,8 +34,11 @@ Estuding django
 - criando super usuario admin
   python manage.py createsuperuser user>admin
 
-* ACESSO-SGBD
+### Django Shell
 
+`python manage.py shell`  
+
+#### ACESSO-SGBD
 
 - USER DE TESTE EM NUVEM => admin
 - EMAIL PARA TESTE EM NUVEM =>admin@teste.com

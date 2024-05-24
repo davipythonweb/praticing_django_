@@ -101,7 +101,6 @@ DATABASES = {
 """
 
 # conexao para postgreSQL
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
