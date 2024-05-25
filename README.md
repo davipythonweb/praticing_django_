@@ -59,5 +59,4 @@
 
   ![Fluxo-Django](https://github.com/davipythonweb/praticing_django_/blob/main/django-architecture.webp?raw=true)
 
-
 - implementar docker com mysql com Django
