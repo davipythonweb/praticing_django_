@@ -1,6 +1,8 @@
 # praticing*django*
 
-Estuding django
+- Estuding django
+
+- migrando o projeto para a AWS(amazon EC2) com servidor em nuvem
 
 - migrando para banco PostgreSQL
 `comandos`
