@@ -2,7 +2,7 @@
 
 - Estuding django
 
-- migrando o projeto para a AWS(amazon EC2) com servidor em nuvem
+- migrando o projeto para a AWS(amazon EC2) com servidor em nuvem(pausado)
 
 - migrando para banco PostgreSQL
 `comandos`
