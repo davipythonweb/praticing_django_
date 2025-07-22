@@ -1,4 +1,4 @@
-# praticing*django*
+# praticing *django*
 
 - Estuding django
 
